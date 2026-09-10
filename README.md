@@ -28,20 +28,20 @@ The Following Methods/Functions were used:
 print("Shape of cars DataFrame:", cars.shape)
 print("Column Names:", cars.columns.tolist())
 ```
-The .shape attribute displays the overall dimensions (32 rows by 12 columns), and .columns.tolist() returns a complete list of all column attribute names present in the dataset.
+The `.shape` attribute displays the overall dimensions (32 rows by 12 columns), and `.columns.tolist()` returns a complete list of all column attribute names present in the dataset.
 
 ```python
 # Part B: Positional slicing using .iloc
 cars_6_to_10 = cars.iloc[5:10]
 ```
-The .iloc[5:10] positional indexer applies zero-based slicing ([start:stop]). Treating row 1 as index position 0, rows 6 through 10 correspond to zero-based index positions 5, 6, 7, 8, and 9.
+The `.iloc[5:10]` positional indexer applies zero-based slicing ([start:stop]). Treating row 1 as index position 0, rows 6 through 10 correspond to zero-based index positions 5, 6, 7, 8, and 9.
 
 ```python
 # Part C: Label-based column selection
 cars_6_to_10_selected = cars_6_to_10.loc[:, ['Model', 'mpg', 'cyl', 'hp', 'gear']]
 display(cars_6_to_10_selected)
 ```
-The .loc[:, ['Model', 'mpg', 'cyl', 'hp', 'gear']] selector isolates the exact required columns by label in the specified order without relying on numerical column indices.
+The `.loc[:, ['Model', 'mpg', 'cyl', 'hp', 'gear']]` selector isolates the exact required columns by label in the specified order without relying on numerical column indices.
 
 # **2. Model Lookup**
 #### **Objective:** This problem requires using Boolean indexing on the Model column to dynamically locate and store the complete row record for "Toyota Corolla" into toyota, while extracting only the Model, mpg, hp, and wt columns for "Pontiac Firebird" into pontiac without relying on any hardcoded row numbers.
@@ -53,14 +53,14 @@ The Following Methods/Functions were used:
 toyota = cars.loc[cars['Model'] == 'Toyota Corolla']
 display(toyota)
 ```
-The evaluation cars['Model'] == 'Toyota Corolla' generates a dynamic Boolean mask array. Passing this mask to .loc[] isolates the matching vehicle record across all dataset columns.
+The evaluation `cars['Model'] == 'Toyota Corolla'` generates a dynamic Boolean mask array. Passing this mask to `.loc[]` isolates the matching vehicle record across all dataset columns.
 
 ```python
 # Part B: Selective attribute query for Pontiac Firebird
 pontiac = cars.loc[cars['Model'] == 'Pontiac Firebird', ['Model', 'mpg', 'hp', 'wt']]
 display(pontiac)
 ```
-For the Pontiac Firebird query, .loc[mask, column_list] combines dynamic Boolean row matching with precise column label selection in a single operation.
+For the Pontiac Firebird query, `.loc[mask, column_list]` combines dynamic Boolean row matching with precise column label selection in a single operation.
 
 # **3. Multi-Model Subsetting**
 #### **Objective:** Create a 6x6 array containing the squares of the first 36 positive integers and isolate elements strictly greater than the array's overall mean.
@@ -77,16 +77,16 @@ selected_cars = cars.loc[cars['Model'].isin(target_models), target_cols]
 display(selected_cars)
 print("Shape of selected_cars:", selected_cars.shape)
 ```
-To extract these specific records without hardcoding row indices or writing out long, repetitive OR conditions (such as (cars['Model'] == 'Datsun 710') | (cars['Model'] == 'Lotus Europa')), the .isin() method is utilized. This function vectorizes the conditional check, generating a single Boolean mask array that flags True for any row where the Model matches a value inside the target_models list.
+To extract these specific records without hardcoding row indices or writing out long, repetitive OR conditions (such as `(cars['Model'] == 'Datsun 710')` | `(cars['Model'] == 'Lotus Europa'))`, the `.isin()` method is utilized. This function vectorizes the conditional check, generating a single Boolean mask array that flags True for any row where the Model matches a value inside the target_models list.
 
-By passing both this Boolean mask and the target_cols list directly into the .loc[row_indexer, column_indexer] accessor, Pandas executes a highly efficient two-dimensional slice. It dynamically filters the rows based on the True condition matches and simultaneously subsets the dataset down to the five requested column labels. This approach ensures the original index ordering is preserved while discarding unwanted data.
+By passing both this Boolean mask and the target_cols list directly into the `.loc[row_indexer, column_indexer]` accessor, Pandas executes a highly efficient two-dimensional slice. It dynamically filters the rows based on the True condition matches and simultaneously subsets the dataset down to the five requested column labels. This approach ensures the original index ordering is preserved while discarding unwanted data.
 
 Finally, evaluating the .shape attribute acts as a structural validation check, confirming that the resulting matrix has successfully been filtered down to exactly 3 rows and 5 columns (3, 5) as mandated by the problem requirements.
 
-To see the main Python program for Experiment 3, click this link https://github.com/Matt-Mallari/ECE-2112-PA-2/blob/main/ECE2112_PA2.ipynb, download the .ipynb file, open it in Jupyter Notebook, and run all cells.
+To see the main Python program for Experiment 3, click this link https://github.com/Matt-Mallari/ECE-2112-PA-3/blob/main/ECE_2112_PA3.ipynb, download the .ipynb file, open it in Jupyter Notebook, and run all cells.
 
-Moreover, the `.npy` file for each respective array can be viewed here https://github.com/Matt-Mallari/ECE-2112-PA-2/tree/main/NumPy%20Files.
-Furthermore, 
+Moreover, the `cars.csv` file utilized for data frame creation can be found here: https://github.com/Matt-Mallari/ECE-2112-PA-3/blob/main/cars.csv.
+
 
 ### **README File Version History**
 * 2026, September 10: Repository Created
