@@ -83,8 +83,6 @@ By passing both this Boolean mask and the target_cols list directly into the .lo
 
 Finally, evaluating the .shape attribute acts as a structural validation check, confirming that the resulting matrix has successfully been filtered down to exactly 3 rows and 5 columns (3, 5) as mandated by the problem requirements.
 
-
-
 To see the main Python program for Experiment 3, click this link https://github.com/Matt-Mallari/ECE-2112-PA-2/blob/main/ECE2112_PA2.ipynb, download the .ipynb file, open it in Jupyter Notebook, and run all cells.
 
 Moreover, the `.npy` file for each respective array can be viewed here https://github.com/Matt-Mallari/ECE-2112-PA-2/tree/main/NumPy%20Files.
