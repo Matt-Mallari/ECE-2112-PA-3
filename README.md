@@ -4,7 +4,7 @@
 This repository details the implementation of Experiment 3 (PA3), focusing on data manipulation, positional and label-based slicing, and dynamic Boolean indexing using the Pandas library. The code fulfills the intended learning outcomes of loading tabular CSV datasets and extracting specific DataFrame subsets without modifying original source values.
 
 # **Initial Setup & Library Imports**
-Before tackling the specific problems, the necessary Python libraries must be imported to establish the working environment.
+Before tackling the specific problems, the necessary Python libraries and CSV file must be imported to establish the working environment.
 
 ## **The Following Modules were imported:**
 
