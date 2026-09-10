@@ -63,7 +63,7 @@ display(pontiac)
 For the Pontiac Firebird query, `.loc[mask, column_list]` combines dynamic Boolean row matching with precise column label selection in a single operation.
 
 # **3. Multi-Model Subsetting**
-#### **Objective:** Create a 6x6 array containing the squares of the first 36 positive integers and isolate elements strictly greater than the array's overall mean.
+#### **Objective:** This problem requires creating a DataFrame named selected_cars containing records for three target models—"Datsun 710", "Lotus Europa", and "Ferrari Dino"—by filtering on their model values rather than row numbers, retaining only the Model, mpg, cyl, hp, and gear columns, displaying selected_cars, and verifying that its shape is exactly (3, 5).
 
 The Following Methods/Functions were used:
 
